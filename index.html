@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto UwU</title>
     <script src="proyectoUwU.js" type="text/javascript"></script>
+    <script src="planos3D.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
 </head>
 <body><center>
@@ -14,12 +15,21 @@
     <button id="pp" onclick="mostrar()">start</button>
     <div id="super" style="display:none">
     <h2 id="texto"></h2>
-    <div id="canvas" >  </div>
+    <div id="butterfly" > </div>
     <div id="slider">
         <p>but you can change the number of wings with this slider :) </p>
         <p>enjoy ;)</p>
+    </div></div>
+    <div id="planos">
+        <h2>Fist we need to understand the plane in 3 dimensions</h2>
+    <p> click to open an interactive simulation, here below you can move
+         the mouse on the screen to move through the x, y and z planes</p> 
+    <h5>enjoy :)</h5>
+    <button id="ac" onclick="mostrar2()">abrir</button>
+    <div id="planes"style="display:block"></div>
+    <br>
     </div>
-</div>
+
 </center>
 </body>
 </html>
