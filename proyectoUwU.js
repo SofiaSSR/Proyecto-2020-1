@@ -1,4 +1,5 @@
   var fondo = 190;//rbg del fondo
+  var guardado;
   var t = 0;//el punto inicial
   var aumento =0.0065;//variacion entre los valores de t
   var grande =[] ;//guarda los puntos para hacer la curva entera
@@ -7,19 +8,18 @@
   var colorin3= random(195);
   var nvieja = 4;
   var pp = true;
+  var discriminante = 0.009;
 function setup() {
-   slider = createSlider(1,25,4);
-   canvas = createCanvas(1000,1000,WEBGL);
+  slider = createSlider(1,25,4);
+  canvas = createCanvas(1000,1000,WEBGL);
   canvas.parent("butterfly");
   slider.parent("slider");
-  background(255);
-  noLoop();
-}
+  background(fondo);
+  noLoop();}
   function mostrar(){
     document.getElementById('super').style.display = 'block';
     document.getElementById("pp").innerHTML= "pausa";
-    mecanismo()
-  }
+    mecanismo()}
 function mecanismo(){
 if(pp == true){
   document.getElementById("pp").innerHTML = "play";
@@ -35,13 +35,14 @@ if(pp == true){
 }
   function draw() {
     camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,90,0);
-    rotateX(PI/4)
+    rotateX(PI/4) 
     stroke(colorin1,colorin2,colorin3);
     noFill();
      n = slider.value();// numero de ejes
     if (n != nvieja){
       background(fondo);
       grande = [];
+      discriminante = n*0.039/4;
       t=0;}
     strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
     var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
@@ -52,7 +53,7 @@ if(pp == true){
    var py2 = -cos(t)*equation*100 ;
    var px2 = -sin(t)*equation*100 ;
    var distancia = sqrt(((py1-py2)**2)+((px1-px2)**2));
-    if(distancia>0.039 &&(( 499<=int(px1)<= 501)||(499<=int(py1)<= 501)) ){
+    if(distancia>discriminante &&(( 499<=int(px1)<= 501)||(499<=int(py1)<= 501)) ){
       var chiquito = [px1,py1,t+aumento];
       grande.push(chiquito); 
       stroke(colorin1,colorin2,colorin3);
