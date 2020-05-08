@@ -34,15 +34,15 @@ if(pp == true){
 }
 }
   function draw() {
-    camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,90,0);
-    rotateX(PI/4) 
+    camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,1,0);
+    rotateX(PI/4);
     stroke(colorin1,colorin2,colorin3);
     noFill();
      n = slider.value();// numero de ejes
     if (n != nvieja){
       background(fondo);
       grande = [];
-      discriminante = n*0.039/4;
+      discriminante = 0.039;
       t=0;}
     strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
     var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
