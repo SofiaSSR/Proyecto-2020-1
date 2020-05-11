@@ -34,7 +34,7 @@ if(pp == true){
 }
 }
   function draw() {
-    camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,1,0);
+    camera(0,0,(height/2)/ tan(PI/6),0,0,0,1,0,0);
     rotateX(PI/4);
     stroke(colorin1,colorin2,colorin3);
     noFill();
@@ -48,7 +48,7 @@ if(pp == true){
     var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
     var py1 = -cos(t+aumento)*equation*100 ;
     var px1 = -sin(t+aumento)*equation*100 ;
-    let legend = 'your point is( ' + nfc(px1,3) + ' , ' + nfc(py1,3) + ' , ' + nfc(py1,3) +' ) \t\t\t '+"n = "+n; 
+    let legend = 'your point is( ' + nfc(px1,3) + ' , ' + nfc(py1,3) + ' , ' + nfc(py1,3) +' ) \t\t\t' /*esas t's se cambian en el style*/+"n = "+n; 
     document.getElementById("texto").innerHTML= legend;
    var py2 = -cos(t)*equation*100 ;
    var px2 = -sin(t)*equation*100 ;

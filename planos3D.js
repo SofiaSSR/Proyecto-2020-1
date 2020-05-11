@@ -30,10 +30,10 @@ function dibujandop(colorcitop,x1,y1,z1,x2,y2,z2){
     function draw(){
         if(ac==false){
             background(195);
-             rotateX(frameCount * 0.01);
-            rotateY(frameCount * 0.01);
-            rotateX(frameCount * -0.001);
-            rotateY(frameCount * -0.001);
+             rotateX(-mouseX* 0.01);
+             rotateX(frameCount*0.001);
+            rotateY(-mouseY * 0.01);
+            rotateY(frameCount*0.001);
             dibujandop('hsba(58,63%,100%,0.5)',0,-(width*5/10),0,0,(width*5/10),0);//planox es amarillo pollito y eje x es 0,-(width*5/10),0,0,(width*5/10),0
             rotateX(PI/2);
             dibujandop('hsba(174,47%,100%,0.5)',0,-(width*5/10),0,0,(width*5/10),0);//planoy verde menta magica (literalmente asi decia en el picker de colores) eje y es 0,-(width*5/10),0,0,(width*5/10),0
