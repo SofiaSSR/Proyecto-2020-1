@@ -6,26 +6,36 @@
     <title>Proyecto UwU</title>
     <script src="proyectoUwU.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
-    <style type="text/stylesheet" src="estilosUwU.css"></style>
+    <link rel="stylesheet" type="text/css" href="estilosUwU.css">
 </head>
 <body>
-    <center><!-- esto se tiene que borrar para plicar estilos apropiadamente -->
-    <h1>Welcome to our grafication sistem</h1>
-    <p>this is the butterfly curve , please watch how it is plotting <br> </p>
-    <br>
-    <button id="pp" onclick="mostrar()">start</button>
+    <center>
+<!-- esto se tiene que borrar para plicar estilos apropiadamente -->
+    <h1>La curva mariposa</h1>
+    <p>La curva mariposa es una curva plana trascendente , definida por una ecuación paramétrica y otra equivalente polar descubierta por Temple H. Fay en 1989, la cual presenta singularidades tales como:</p>
+    <ul><li>Se extiende en un intervalo de los números reales gracias a un parámetro o variable tiempo (t).</li>
+    <li>Esta grafica para cualquier número de “ejes” es simétrica respecto a la recta que cruza por los  90° y los 270° en el sistema de coordenadas polares.</li>
+    <li>El número de “ejes” en esta ecuación viene dado por la variable n perteneciente a los enteros (en la originalmente descubierta n=4), n las ecuaciones anteriores es coeficiente de t dentro de -2 cos().</li>
+    <li id="ecuations"><p>Esta curva viene definida por las siguientes ecuaciones paramétricas:</p>
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6a17a33d739ede62a269949b5bf551a875397102">
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92e1ec07900777c282b5c379b0877906f4594727">
+        <p>y por la siguiente ecuación polar:</p>
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a23cc7d68403ae1e94cdaa4d087486960b6aef19"></li>
+    </ul>
+    <button id="pp" onclick="mostrar()">START</button>
     <div id="super" style="display:none">
     <h2 id="texto"></h2>
     <div id="butterfly" > </div>
     <div id="slider">
-        <p>but you can change the number of wings with this slider :) </p>
+        <p>Se puede cambiar el numero de ejes con el slider  :) </p>
         <p>enjoy ;)</p>
     </div></div>
-     <br><br><!-- esto se tiene que borrar para plicar estilos apropiadamente -->
+    <div id="color">
+    <br><!-- esto se tiene que borrar para plicar estilos apropiadamente -->
     <button> <a href="ordenyplanostridimensionales.html">Orden y planos tridimensionales</a></button>
-    <button> <a href="ecuacionesparamentricas.html">Ecuaciones paramentricas</a></button>
     <button> <a href="planopolar.html">Plano polar</a></button>
-
+    <button> <a href="ecuacionesparamentricas.html">Ecuaciones paramentricas</a></button>
+    </div>
 </center>
 </body>
 </html>
