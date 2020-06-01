@@ -11,6 +11,10 @@ function preload() {
 function setup(){
     canvas2= createCanvas(400,400,WEBGL);
     canvas2.parent("planes"); 
+    textFont(font);
+    textSize(fontsize);
+    textAlign(CENTER, CENTER);
+}
 }
 function mostrar2(){
     if (ac==true){
