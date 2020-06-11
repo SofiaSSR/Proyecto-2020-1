@@ -7,6 +7,7 @@
   var colorin2= random(240);//parametro 2 del rgb
   var colorin3= random(195);
   var nvieja = 4;
+  var init=PI/4;
   var pp = true;
   var discriminante = 0.009;
 function setup() {
@@ -34,8 +35,10 @@ if(pp == true){
 }
 }
   function draw() {
-    camera(0,0,(height/2)/ tan(PI/6),0,0,0,1,0,0);
+    console.log(frameCount);
+    camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,1,0);
     rotateX(PI/4);
+    rotateX(frameCount*0,9999999999999999);
     stroke(colorin1,colorin2,colorin3);
     noFill();
      n = slider.value();// numero de ejes
