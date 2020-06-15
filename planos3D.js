@@ -35,15 +35,15 @@ function escritos(textura,c1,c2,c3,cons,roty,rotx){/*para posicionar el texto y 
 //funciones de mecanismo de apertura y cierre
 function mostrar2(){
   if (ac==true){
-      
       document.getElementById('planes').style.display = 'block';
       ac=false;
-      document.getElementById("ac").innerHTML= "cerrar";
+      document.getElementById("pp").innerHTML= "cerrar";
       loop();
   }else{
         document.getElementById('planes').style.display = 'none';
-        document.getElementById("ac").innerHTML= "abrir";
+        document.getElementById("pp").innerHTML= "abrir";
         noLoop();
+        ac=true;
 }}
 function pr(){
     if (bool) {bool=false;
@@ -52,7 +52,7 @@ function pr(){
       document.getElementById("pr").innerHTML= "pausar rotacion";}       
 }
 function mecanismo(){
-    if(pp == true){
+    if(pp){
       document.getElementById("ad").innerHTML = "play";
       noLoop();
       pp = false;
