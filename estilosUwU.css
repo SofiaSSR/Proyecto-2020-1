@@ -19,6 +19,7 @@ p {
 	font-size:18px;
 	text-align:center;
 	color:#3F0255;
+	margin:50px;
 }
 /* p:first-child{
 	text-transform: uppercase;
