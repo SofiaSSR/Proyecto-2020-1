@@ -1,6 +1,7 @@
 var ac = true;//abrir y cerrar el canvas
 var pp = true;//play y pausa
 var c;
+var rad = false;
 var bool= true;//pausary reanudar la rotacion automatica
 function mostrar(){
  if (ac==true){      
@@ -21,9 +22,21 @@ function mecanismo(){
     pp = false;
   }else{
     document.getElementById("ad").innerHTML = "pausa";
-    Loop();
+    loop();
     pp= true;
 }}
+function radian(){
+  if (rad){
+    document.getElementById("rad").innerHTML = "ver en radianes";
+    document.getElementById("textrad").innerHTML = "Puedes volver verlo en radianes pulsando este boton";
+    rad = false;
+  }else{
+    document.getElementById("rad").innerHTML = "ver en grados";
+    document.getElementById("textrad").innerHTML = "Puedes volver a verlo en grados pulsando este boton";
+    rad = true;
+  }}
+function encuentralalle(laequis){
+  return(265/(laequis**2))}
 function setup(){ /*la principal para cargar*/
     canvas2= createCanvas(500,500);
     canvas2.parent("planop");
@@ -63,15 +76,34 @@ function draw(){
   triangle(width/2+7,15,width/2-7,15,width/2,0);
   noFill();
   //let legend = 'your point is( ' + nfc(px1,3) + ' , ' + nfc(py1,3) + ' , ' + nfc(py1,3) +' ) \t\t\t' /*esas t's se cambian en el style*/+"n = "+n; 
-  //document.getElementById("texto").innerHTML= legend;
   var mdiente= (mouseY-250)/(mouseX-250);
   if(mouseX<250) line(mouseX,mouseY,0,pendiente(0,mdiente));
   else if(mouseX>250) line(mouseX,mouseY,500,pendiente(500,mdiente));
+  let medida= sqrt(((mouseX-250)**2) +(mouseY-250)**2 );
   stroke(255,0,0);
   line(mouseX,mouseY,250,250);
   strokeWeight(5);
   point(mouseX,mouseY);
   strokeWeight(1);
-  
-  
+  let angler = Math.atan2((mouseY-250),(mouseX -250));
+  if(angler<0) angler= angler*-1;
+  else angler= (PI*2)-angler;
+  let angled = angler * 180 / PI;
+  angler = angler.toString();
+  if (rad) document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angler,3) +'*π /'+'1'+ ')\t\t\t';
+  else document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
+  fill(250,10,10);
+  let f = (mdiente*-250)+250;
+  let a = (mdiente**2)+1;
+  let cortex = (2*f + sqrt(((2*f)**2-(4*a*(f**2))*-1)))/2*a;
+  fill('hsba(9,30%,100%,0.5)');
+  beginShape();
+  curveVertex(265,250);
+  curveVertex(cortex,encuentralalle(cortex));
+  for(i=1;i>6;i++){
+  let promediodex = (265+cortex)*i/6;
+  curveVertex(promediodex,encuentralalle(promediodex));}
+   console.log(cortex+"  "+encuentralalle(cortex)+"   "+ ((2*f)**2 - (4*a*(f**2))));
+   endShape();
+   noFill();
 }
