@@ -3,17 +3,31 @@
 	margin: 5%;
 	align-content: center;
 	justify-content: center;
-	background: #ffffb3;
+	background: #ffe2bc;
 } 
 h1 {
-	background:rgba(0, 221, 155, 0.877);
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color:#ffb367;
+	font-family:sans-serif;
 	text-align:center;
-	border-radius: 2rem;
-	border-style: double;
 	padding: 2%;
 	transition-duration: 0.4s;
-
+}
+#left,#right{
+	align-items: center;
+	margin: 2%;
+	direction: flex;
+	flex-direction: column;
+    align-content: center;
+}
+#right{
+	padding: 5% 1% 0% 1%;
+	text-align: left;
+	text-justify: auto;
+}
+#slider,#pp{
+	display: block;
+	margin-left: auto;
+	margin-right: auto 
 }
 p {
 	font-size:18px;
@@ -21,9 +35,9 @@ p {
 	color:#3F0255;
 	margin:50px;
 }
-/* p:first-child{
-	text-transform: uppercase;
-} */
+#container{
+	display: flex;
+}
 ul {
 	font-size:18px;
 	text-align:left;

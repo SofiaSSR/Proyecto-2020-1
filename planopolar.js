@@ -1,20 +1,7 @@
-var ac = true;//abrir y cerrar el canvas
 var pp = true;//play y pausa
 var c;
 var rad = false;
 var bool= true;//pausary reanudar la rotacion automatica
-function mostrar(){
- if (ac==true){      
-    document.getElementById('planes').style.display = 'block';
-    ac=false;
-    document.getElementById("pp").innerHTML= "cerrar";
-    loop();
- }else{
-    document.getElementById('planes').style.display = 'none';
-    document.getElementById("pp").innerHTML= "abrir";
-    noLoop();
-    ac=true;
-}}
 function mecanismo(){
   if(pp){
     document.getElementById("ad").innerHTML = "play";
@@ -99,11 +86,7 @@ function draw(){
   fill('hsba(9,30%,100%,0.5)');
   beginShape();
   curveVertex(265,250);
-  curveVertex(cortex,encuentralalle(cortex));
-  for(i=1;i>6;i++){
-  let promediodex = (265+cortex)*i/6;
-  curveVertex(promediodex,encuentralalle(promediodex));}
-   console.log(cortex+"  "+encuentralalle(cortex)+"   "+ ((2*f)**2 - (4*a*(f**2))));
+
    endShape();
    noFill();
 }
