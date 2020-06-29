@@ -1,4 +1,3 @@
-var ac = true;//abrir y cerrar el canvas
 var pp = true;//play y pausa
 var c;
 var bool= true;//pausary reanudar la rotacion automatica
@@ -33,18 +32,6 @@ function escritos(textura,c1,c2,c3,cons,roty,rotx){/*para posicionar el texto y 
   rotateY(-roty*PI/2);
 }
 //funciones de mecanismo de apertura y cierre
-function mostrar2(){
-  if (ac==true){
-      document.getElementById('planes').style.display = 'block';
-      ac=false;
-      document.getElementById("pp").innerHTML= "cerrar";
-      loop();
-  }else{
-        document.getElementById('planes').style.display = 'none';
-        document.getElementById("pp").innerHTML= "abrir";
-        noLoop();
-        ac=true;
-}}
 function pr(){
     if (bool) {bool=false;
       document.getElementById("pr").innerHTML= "reanudar rotacion";}

@@ -6,12 +6,11 @@
   var colorin2= random(240);//parametro 2 del rgb
   var colorin3= random(195);
   var nvieja = 4;
-  var ancho = $(document).width();
   var pp = true;
   var discriminante = 0.009;
 function setup() {
   slider = createSlider(1,25,4);
-  canvas = createCanvas(ancho/3,ancho/3,WEBGL);
+  canvas = createCanvas(500,500,WEBGL);
   canvas.parent("butterfly");
   slider.parent("slider");}
 function mecanismo(){
@@ -25,7 +24,6 @@ function mecanismo(){
   pp= true;
 }}
 function draw() {
-  console.log(ancho/3);
   camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,1,0);
   rotateX(PI/4);
   rotateX(frameCount*0,9999999999999999);

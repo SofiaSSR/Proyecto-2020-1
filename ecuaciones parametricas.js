@@ -1,18 +1,5 @@
-var ac = true;//abrir y cerrar el canvas
 var pp = true;//play y pausa
 let t = 0;
-function mostrar(){
- if (ac==true){      
-   document.getElementById('parametrik').style.display = 'block';
-   ac=false;
-   document.getElementById("pp").innerHTML= "cerrar";
-   loop();
-}else{
-       document.getElementById('parametrik').style.display = 'none';
-       document.getElementById("pp").innerHTML= "abrir";
-       noLoop();
-       ac=true;
-}}
 function mecanismo(){
  if(pp){
     document.getElementById("ad").innerHTML = "play";
