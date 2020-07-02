@@ -41,7 +41,7 @@ function draw() {
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
   var py1 = -cos(t+aumento)*equation*100 ;
   var px1 = -sin(t+aumento)*equation*100 ;
-  let legend = 'el punto actual es ( ' + nfc(px1,3) + ' , ' + nfc(py1,3) + ' , ' + nfc(py1,3) +' ) \t\t\t' /*esas t's se cambian en el style*/+"n = "+n; 
+  let legend = 'El punto actual es ( ' + nfc(px1,3) + ' , ' + nfc(py1,3) + ' , ' + nfc(py1,3) +' ) \t\t\t' /*esas t's se cambian en el style*/+"n = "+n; 
   document.getElementById("texto").innerHTML= legend;
   var py2 = -cos(t)*equation*100 ;
   var px2 = -sin(t)*equation*100 ;
