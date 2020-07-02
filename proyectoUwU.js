@@ -1,6 +1,6 @@
   var guardado;
   var t = 0;//el punto inicial
-  var aumento =0.03;//variacion entre los valores de t
+  var aumento =0.05;//variacion entre los valores de t
   var grande =[] ;//guarda los puntos para hacer la curva entera
   var colorin1 = random(200);//parametro 1 del rgb
   var colorin2= random(240);//parametro 2 del rgb
