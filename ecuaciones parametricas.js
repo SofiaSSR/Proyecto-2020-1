@@ -23,7 +23,7 @@ function draw() {
   let equis =sin(t) * 100;
   let lle = cos(t) * 100;
   point(equis,lle);
-  let legend = 'your point is( ' + nfc(equis,3) + ' , ' + nfc(lle,3) + ' , ' + nfc(2*t,3) +' ) \t\t\t'; 
+  let legend = 'Tu punto es:( ' + nfc(equis,3) + ' , ' + nfc(lle,3) + ' , ' + nfc(2*t,3) +' ) \t\t\t'; 
   document.getElementById("texto").innerHTML= legend;
   t += 0.025; //0.01;
   if(nfc(2*t,3)<100){
@@ -33,6 +33,6 @@ function draw() {
       t = 0;
       equis = 0;
       lle = 0;
-      background(250,250,180);
+      background(255,226,188);
   }
 }
