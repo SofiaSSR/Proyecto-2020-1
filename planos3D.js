@@ -8,7 +8,6 @@ function textito(nombre,string){/*para hacer el texto al lado de las flechas */
   nombre.text(string,25,75);
 }
 function setup(){ /*la principal para cargar*/
-    noLoop();
   canvas2= createCanvas(400,400,WEBGL);
   canvas2.parent("plano3");
   equis=createGraphics(100,100);

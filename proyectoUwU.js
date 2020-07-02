@@ -15,12 +15,14 @@ function setup() {
   slider.parent("slider");}
 function mecanismo(){
  if(pp){
-  document.getElementById("pp").innerHTML = "Play";
+  document.getElementById("pp").innerHTML = "play";
   noLoop();
   pp = false;
+  console.log("esta pausado");
  }else{
-  document.getElementById("pp").innerHTML = "Pausa";
+  document.getElementById("pp").innerHTML = "pausa";
   loop();
+  console.log("esta corriendo");
   pp= true;
 }}
 function draw() {

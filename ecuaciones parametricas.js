@@ -13,7 +13,6 @@ function mecanismo(){
 function setup() {
   canvas = createCanvas(300, 300, WEBGL);
   canvas.parent("helice");
-  noLoop();
 }
 function draw() {
   rotateX(PI / 3);

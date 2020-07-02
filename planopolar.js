@@ -1,7 +1,8 @@
 var pp = true;//play y pausa
 var c;
+var radiux = 15;
 var rad = false;
-var bool= true;//pausary reanudar la rotacion automatica
+var bool= true;//pausar y reanudar la rotacion automatica
 function mecanismo(){
   if(pp){
     document.getElementById("ad").innerHTML = "play";
@@ -10,8 +11,7 @@ function mecanismo(){
   }else{
     document.getElementById("ad").innerHTML = "pausa";
     loop();
-    pp= true;
-}}
+    pp = true;}}
 function radian(){
   if (rad){
     document.getElementById("rad").innerHTML = "ver en radianes";
@@ -27,11 +27,11 @@ function encuentralalle(laequis){
 function setup(){ /*la principal para cargar*/
     canvas2= createCanvas(500,500);
     canvas2.parent("planop");
-    noLoop();
 }
 function pendiente(x,pendiente){
   return((pendiente*x)-(pendiente*250)+250);
 }
+
 function draw(){
   background(190,100,100);
   stroke(155);
@@ -73,20 +73,13 @@ function draw(){
   point(mouseX,mouseY);
   strokeWeight(1);
   let angler = Math.atan2((mouseY-250),(mouseX -250));
-  if(angler<0) angler= angler*-1;
+  if(angler<0) angler*=-1;
   else angler= (PI*2)-angler;
-  let angled = angler * 180 / PI;
-  angler = angler.toString();
-  if (rad) document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angler,3) +'*π /'+'1'+ ')\t\t\t';
-  else document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
-  fill(250,10,10);
-  let f = (mdiente*-250)+250;
-  let a = (mdiente**2)+1;
-  let cortex = (2*f + sqrt(((2*f)**2-(4*a*(f**2))*-1)))/2*a;
   fill('hsba(9,30%,100%,0.5)');
-  beginShape();
-  curveVertex(265,250);
-
-   endShape();
-   noFill();
+  arc(250,250,20,20,-angler,0,PIE);
+  noFill();
+  let angled = angler * 180 / PI;
+  angler /= PI;
+  if (rad) document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ angler +'π )\t\t\t';
+  else document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
 }

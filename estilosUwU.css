@@ -17,11 +17,9 @@ h1 {
 	margin: 2%;
 	direction: flex;
 	flex-direction: column;
-    align-content: center;
-}
-#right{
+	align-content: center;
 	padding: 5% 1% 0% 1%;
-	text-align: left;
+	text-align: center;
 	text-justify: auto;
 }
 #slider,#pp{
@@ -43,7 +41,6 @@ ul {
 	text-align:left;
 	color:#3F0255;
 }
-/* aqui pongan los estilos  */
  body {
 	align-content: center;
 	justify-content: center;
