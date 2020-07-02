@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASCENDENTE</title>
+     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilosUwU.css">
+    </head>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#58b4ae;border-radius:12px;position:fixed;margin-left:auto;margin-right:auto;margin-top:auto;left:0px; right:0px;top:0px;">
+  <a class="navbar-brand" href="#" style="color:white;">MENÚ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+	      <a class="nav-link" href="index.html">Home<span class="sr-only">index.html</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="ecuacionesparamentricas.html">EP<span class="sr-only">ecuacionesparametricas.html</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="ordenyplanostridimensionales.html">TRD<span class="sr-only">ordenyplanostridimensionales.html</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="planopolar.html">Plano Polar<span class="sr-only">planopolar.html</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="trascendente.html">Trascendente<span class="sr-only">trascendente.html</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="biografía.html">Biografia<span class="sr-only">biografía.html</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<body>
+<div class="left">
+<h1>Ecuaci&oacute;n y Funci&oacute;n Trascendente</h1>
+<p>Una ecuaci&oacute;n trascendente es una igualdad entre dos expresiones matem&aacute;ticas en las que aparecen una o m&aacute;s inc&oacute;gnitas relacionadas mediante operaciones matem&aacute;ticas, que no son &uacute;nicamente algebraicas, y cuya soluci&oacute;n no puede obtenerse empleando solo las herramientas propias del &aacute;lgebra. En otras palabras, es una ecuaci&oacute;n que no se puede reducir a una ecuaci&oacute;n algebraica mediante transformaciones algebraicas como las demostradas en la imagen.</p>
+<p>Algunos ejemplos de funciones trascendentes est&aacute;n expuestos en la imagen anexa.</p>
+<p>Por otro lado, una funci&oacute;n que trasciende al &aacute;lgebra en el sentido que no puede ser expresada en t&eacute;rminos de una secuencia infinita de operaciones algebraicas de suma, resta y extracci&oacute;n de ra&iacute;ces. Una funci&oacute;n de una variable es trascendente si es independiente en un sentido algebraico de dicha variable.</p>
+</div>
+<div class="right">
+<p><img src="https://3.bp.blogspot.com/-9Plyz1jUI30/VSMc0_A-qpI/AAAAAAAASB8/vo6O__swK2k/s1600/Ecuacion-Trascendental.gif" /><img src="https://4.bp.blogspot.com/-Pt1OO1SBmXk/VSMeA2oUVeI/AAAAAAAASCU/GtyhJgvoHG8/s1600/Ecuacion-Trascendental-2.gif" /></p>
+<p><img src="https://www.ecured.cu/images/thumb/b/bc/Trascendente.jpg/260px-Trascendente.jpg" /></p>
+</div>
+</body>
+</html>
