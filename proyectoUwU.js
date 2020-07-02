@@ -4,7 +4,7 @@
   var grande =[] ;//guarda los puntos para hacer la curva entera
   var colorin1 = random(200);//parametro 1 del rgb
   var colorin2= random(240);//parametro 2 del rgb
-  var colorin3= random(195);
+  var colorin3= random(195);//parametro 3 del rgb
   var nvieja = 4;
   var pp = true;
   var discriminante = 0.009;
