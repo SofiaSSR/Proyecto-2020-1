@@ -1,9 +1,13 @@
   var guardadisimo =[];//arreglo de las alas
   var t = 0;//el punto inicial
+<<<<<<< HEAD
+=======
+  var aumento =0.05;//variacion entre los valores de t
+>>>>>>> 0cc1f29ccf88accfe0931eec5ba11f1b8a666201
   var grande =[] ;//guarda los puntos para hacer la curva entera
   var colorin1 = random(200);//parametro 1 del rgb
   var colorin2= random(240);//parametro 2 del rgb
-  var colorin3= random(195);
+  var colorin3= random(195);//parametro 3 del rgb
   var nvieja = 4;
   var pp = true;
   var discriminante = 0.009;

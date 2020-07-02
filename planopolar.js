@@ -80,6 +80,6 @@ function draw(){
   noFill();
   let angled = angler * 180 / PI;
   angler /= PI;
-  if (rad) document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ angler +'π )\t\t\t';
-  else document.getElementById("texto").innerHTML = 'your point is( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
+  if (rad) document.getElementById("texto").innerHTML = 'Tu punto es:( ' + nfc(medida,3)+'  ,  '+ angler +'π )\t\t\t';
+  else document.getElementById("texto").innerHTML = 'Tu punto es:( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
 }
