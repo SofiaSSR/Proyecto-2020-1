@@ -1,6 +1,5 @@
-  var guardado;
+  var guardadisimo =[];//arreglo de las alas
   var t = 0;//el punto inicial
-  var aumento =0.065;//variacion entre los valores de t
   var grande =[] ;//guarda los puntos para hacer la curva entera
   var colorin1 = random(200);//parametro 1 del rgb
   var colorin2= random(240);//parametro 2 del rgb
@@ -9,10 +8,13 @@
   var pp = true;
   var discriminante = 0.009;
 function setup() {
-  slider = createSlider(1,25,4);
+  slidern = createSlider(1,25,4);
+  speed = createSlider(6.5,65,35.75);
   canvas = createCanvas(500,500,WEBGL);
   canvas.parent("butterfly");
-  slider.parent("slider");}
+  slidern.parent("slider");
+  speed.parent("speed");
+  }
 function mecanismo(){
  if(pp){
   document.getElementById("pp").innerHTML = "play";
@@ -31,11 +33,12 @@ function draw() {
   rotateX(frameCount*0,9999999999999999);
   stroke(colorin1,colorin2,colorin3);
   noFill();
-  n = slider.value();// numero de ejes
+  n = slidern.value();// numero de ejes
+  var aumento = (speed.value())/1000;  //variacion entre los valores de t
   if (n != nvieja){
    background(190);
    grande = [];
-   discriminante = 0.039;
+   discriminante = 0.039*n/4;
    t=0;}
   strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
@@ -58,6 +61,8 @@ function draw() {
       curveVertex(grande[i][0],grande[i][1],grande[i][2]);
     curveVertex(px2,py2,t);
     endShape();
+    guardadisimo.push(grande);
+    guardadisimo.push([colorin1,colorin2,colorin3]);
     grande = [];
     stroke(colorin1 = random(200),colorin2= random(240),colorin3= random(195));
    }
