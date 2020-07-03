@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIOGRAFIA</title>
-     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
+    <title>Proyecto UwU</title>
+    <script src="proyectoUwU.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="estilosUwU.css">
-    </head>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#58b4ae;border-radius:12px;position:fixed;margin-left:auto;margin-right:auto;margin-top:auto;left:0px; right:0px;top:0px;">
   <a class="navbar-brand" href="#" style="color:white;">MENÚ</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -37,19 +40,31 @@
   </div>
 </nav>
 <body>
-	<div id="container">
-	<div id="biografia">
-		<h1>Temple Sedgwick Fay</h1>
-		<p>Neurólogo y neurocirujano estadounidense, nació en Seattle el 9 de enero de 1895, y murió en Filadelfia el 7 de marzo de 1963.</p>
-<p>Consiguió su licenciatura en la Universidad de Washington, de allí continuó sus estudios en la Universidad de Pensilvania donde el famoso neurólogo William Spiller sería su mentor.</p>
-<p>Se graduó en 1923, realizando el internado en el hospital general de Filadelfia, donde Charles Harrison Frazier sería su nuevo mentor. En los años de 1923 a 1929, diseñó varias técnicas y publicó numerosos artículos en las áreas de neurología y matemática, entre ellos uno llamado “The Butterfly Curve”, donde aprovechando una graficadora diseñó la fórmula para la denominada “Curva Mariposa”.</p>
-<p>En 1937, es nombrado como el sexto presidente de “The Harvey Cushing Society”.</p>
-<p>En 1938, implementó unas técnicas de congelamiento en sus experimentos para tratar el cáncer, lo cual lo llevó a la fama por usar frío extremo para tratar
-tumores malignos.</p>
-	</div>
-	<p></p>
-	<img src="https://samarpanphysioclinic.com/wp-content/uploads/2018/08/download.jpg" width="200%" height="200%" style="margin-top:150px;">
-	<p></p>
-	</div>
+    <div id="container">
+     <div id="left">
+        <h1>Bienvenido</h1>
+        <button id="pp" onclick="mecanismo()">start</button><br> <br>
+        <h6 id="texto"></h6>
+        <div id="butterfly">
+		<center><div id  ="speed"><p>Velocidad:</p></div></center>
+        </div>
+	<center><div id="slider">
+          <p>Número de ejes:</p>
+		</div></div></center>
+    <div id="right">
+    <h1>La Curva Mariposa</h1>
+    <p>La curva mariposa trascendente es una curva plana trascendente, definida por una ecuación paramétrica y otra equivalente polar descubierta por Temple Fay en 1989, la cual presenta singularidades tales como:</p>
+    <ul><li>Se extiende en un intervalo de los números reales gracias a un parámetro o variable tiempo (t).</li>
+    <li>Esta gráfica es simétrica respecto a la recta que cruza por los  90° y los 270° en el sistema de coordenadas polares para cualquier número de “ejes” (conocida como el eje Y en el plano cartesiano).</li>
+    <li>El número de “ejes” en esta ecuación viene dado por la variable n perteneciente a los enteros (en la originalmente descubierta n=4), n las ecuaciones anteriores es coeficiente de t dentro de -2 cos().</li>
+    <li id="ecuations"><p>Esta curva viene definida originalmente por la siguiente ecuación polar: </p>
+	<center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/FayButterfly.png"></li></center>
+    <li><p>Pero para la presentación del proyecto vamos a usar las siguiente version de la ecuación de Fay:</p></li>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/rButterfly.png"></center>
+    <p>Y las siguientes ecuaciones paramétricas:</p>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/xButterfly.png">
+	    <img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/yButterfly.png"></center>
+    </ul>
+   </div></div>
 </body>
 </html>
