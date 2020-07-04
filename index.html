@@ -6,9 +6,11 @@
     <title>Proyecto UwU</title>
     <link rel="stylesheet" type="text/css" href="estilosUwU.css">
     <script src="proyectoUwU.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#58b4ae;border-radius:12px;position:fixed;margin-left:auto;margin-right:auto;margin-top:auto;left:0px; right:0px;top:0px;">
   <a class="navbar-brand" href="#" style="color:white;">MENÚ</a>
@@ -40,34 +42,40 @@
   </div>
 </nav>
 <body>
-    <div id="container">
-     <div id="left">
-        <h1>Bienvenido</h1>
-        <button id="pp" onclick="mecanismo()">start</button><br> <br>
-        <h6 id="texto"></h6>
-        <div id="butterfly">
-          <div id  ="speed"></div>
-        </div>
-        <div id="slider">
-<<<<<<< HEAD
-          <p>Número de ejes:</p>
-=======
-          <p>Se puede cambiar el numero de ejes con el slider  :) </p>
-          <p>Disfrute ;)</p>
->>>>>>> 0cc1f29ccf88accfe0931eec5ba11f1b8a666201
+<div id="container"><!--contenedor de las dos columnas -->
+  <div id="left">
+    <h1>Bienvenido</h1>
+    <button id="pp" onclick="mecanismo()">start</button><br> <br>
+    <h6 id="texto"></h6>
+    <div id="butterfly">
+      <div id  ="speed"></div></div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Colores</button>
+      <div class="dropdown-menu ">
+        <button class="dropdown-item" type="button" onclick="colores(0,0,0)">Negro</button>
+        <button class="dropdown-item" type="button" onclick="colores(255,255,255)">Arcoiris</button>
+        <button class="dropdown-item" type="button" onclick="colores(20,255,20)">Azules</button>
+        <button class="dropdown-item" type="button" onclick="colores(255,20,20)">Rojos</button>
+        <button class="dropdown-item" type="button" onclick="colores(255,255,20)">Amarillos</button>
     </div></div>
-    <div id="right">
+    <div id="slider">
+    <p>Puedes cambiar el número :) </p>
+    <p>Disfrute ;)</p>
+  </div></div>
+  <div id="right">
     <h1>La Curva Mariposa</h1>
     <p>La curva mariposa trascendente es una curva plana trascendente, definida por una ecuación paramétrica y otra equivalente polar descubierta por Temple Fay en 1989, la cual presenta singularidades tales como:</p>
-    <ul><li>Se extiende en un intervalo de los números reales gracias a un parámetro o variable tiempo (t).</li>
-    <li>Esta gráfica es simétrica respecto a la recta que cruza por los  90° y los 270° en el sistema de coordenadas polares para cualquier número de “ejes” (conocida como el eje Y en el plano cartesiano).</li>
-    <li>El número de “ejes” en esta ecuación viene dado por la variable n perteneciente a los enteros (en la originalmente descubierta n=4), n las ecuaciones anteriores es coeficiente de t dentro de -2 cos().</li>
-    <li id="ecuations"><p>Esta curva viene definida por las siguientes ecuaciones paramétricas:</p>
+    <ul>
+      <li>Se extiende en un intervalo de los números reales gracias a un parámetro o variable tiempo (t).</li>
+      <li>Esta gráfica es simétrica respecto a la recta que cruza por los  90° y los 270° en el sistema de coordenadas polares para cualquier número de “ejes” (conocida como el eje Y en el plano cartesiano).</li>
+      <li>El número de “ejes” en esta ecuación viene dado por la variable n perteneciente a los enteros (en la originalmente descubierta n=4), n las ecuaciones anteriores es coeficiente de t dentro de -2 cos().</li>
+      <li id="ecuations"><p>Esta curva viene definida por las siguientes ecuaciones paramétricas:</p>
         <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6a17a33d739ede62a269949b5bf551a875397102">
         <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/92e1ec07900777c282b5c379b0877906f4594727">
         <p>y por la siguiente ecuación polar:</p>
         <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a23cc7d68403ae1e94cdaa4d087486960b6aef19"></li>
     </ul>
-   </div></div>
+  </div></div>
 </body>
 </html>

@@ -35,13 +35,13 @@ function pendiente(x,pendiente){
 function draw(){
   background(190,100,100);
   stroke(155);
-  for (var j =0;j<=12;j++){/*las lineas del plano */
+  for (var j =0;j<=12;j++){/*las lineas del plano grises*/
     line(250,250,cos((j/12)*PI)*200+250,sin((j/12)*PI)*200+250);
     line(250,250,cos((j/12)*PI)*200+250,-sin((j/12)*PI)*200+250);
   }
   let count = 15;
   textSize(10);
-  for(var i=40;i<=400;i+=40){
+  for(var i=40;i<=400;i+=40){/*los circulos con las marcas de medida  */
     stroke(155);
     noFill();
     circle(width/2,height/2,i);
