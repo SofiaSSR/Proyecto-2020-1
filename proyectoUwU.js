@@ -2,7 +2,7 @@
   var t = 0;//el punto inicial
   var colorin =[];//colores
   var aumento;//variacion entre los valores de t
-  var midi = 0.2;
+  var midi = 0.1;
   var ala =[] ;//guarda los puntos para hacer la curva entera
   var nvieja = 4;
   var lento = 6.5;//verifica el cambio de la velocidad 
@@ -35,7 +35,7 @@ function rotacion3D(){
    }else{
     document.getElementById("pp").innerHTML = "iniciar a rotar";
     rotacion = true;
-}
+}}
 function colores(r,g,b){
   colorin =[r,g,b,random(r),random(g),random(b)];}
 
@@ -49,15 +49,15 @@ function draw() {
   noFill();
   n = slidern.value();// numero de ejes
   var aumento = (speed.value())/1000; 
-  var discriminante = 0.009; //variacion entre los valores de t
+  var discriminante = 0.00559; //variacion entre los valores de t
   if (n != nvieja ){
    background(190);
    ala = [];
    conjunto = [];
-   discriminante = 0.039/* ((aumento*1000)**(Math.log(n)))/2000*n */;
+   discriminante = 0.00559/* ((aumento*1000)**(Math.log(n)))/2000*n */;
    t=0;}
    if(speed.value() != lento){
-     discriminante = 0.050;
+     discriminante = 0.004*4/n;
    }
   strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
@@ -68,7 +68,7 @@ function draw() {
   var py2 = -cos(t)*equation*100 ;
   var px2 = -sin(t)*equation*100 ;
   var distancia = sqrt(((py1-py2)**2)+((px1-px2)**2));
-  if(distancia>discriminante &&(-midi>=px1 || px1>=midi) ){
+  if(distancia>discriminante &&(-midi>=px1 || px1>=midi)){
     var chiquito = [px1,py1,t+aumento];
     ala.push(chiquito); 
   }else{
@@ -92,5 +92,5 @@ function draw() {
   t+=aumento;
   nvieja = n;
   lento=speed.value();
-  console.log(discriminante);
+  if(distancia<0.09) console.log(distancia, " discriminante",discriminante);
   }
