@@ -5,7 +5,6 @@
   var grande =[] ;//guarda los puntos para hacer la curva entera
   var nvieja = 4;
   var pp = true;
-  var discriminante = 0.0065;
   function setup() {
     colorin =[0,0,0,random(255),random(255),random(255)];
     slidern = createSlider(1,25,4);
@@ -28,20 +27,22 @@ function mecanismo(){
   pp= true;
 }}
 function colores(r,g,b){
-  colorin =[r,g,b,random(r),random(g),random(b)];
-}
+  colorin =[r,g,b,random(r),random(g),random(b)];}
+
 function draw() {
-  camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
+  //camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
   rotateX(PI/4);
- /*  rotateX(frameCount*0,9999999999999999); */
+  rotateX(frameCount*0.001);
+  rotateY(frameCount*0.001);
   stroke(colorin[3],colorin[4],colorin[4]);
   noFill();
   n = slidern.value();// numero de ejes
-  var aumento = (speed.value())/1000;  //variacion entre los valores de t
+  var aumento = (speed.value())/1000; 
+  var discriminante = 0.0039*4/n; //variacion entre los valores de t
   if (n != nvieja){
    background(190);
    grande = [];
-   discriminante = 0.039*n/4;
+   discriminante = ((aumento*1000)**(Math.log(n)))/2000*n;
    t=0;}
   strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
@@ -56,20 +57,25 @@ function draw() {
     var chiquito = [px1,py1,t+aumento];
     grande.push(chiquito); 
   }else{
-    noFill();
-    beginShape();
-    for (i=0;i<grande.length;i++)
-      curveVertex(grande[i][0],grande[i][1],grande[i][2]);
-    curveVertex(px2,py2,t);
-    endShape();
-    guardadisimo.push(grande);
-    guardadisimo.push([colorin[3],colorin[4],colorin[5]]);
+    guardadisimo.push([grande,colorin[3],colorin[4],colorin[5]]);
     grande = [];
     colorin[3]=random(colorin[0]);
     colorin[4]= random(colorin[1]);
     colorin[5]= random(colorin[2]);
    }
-  point(px1,py1,t);
+  /* beginShape();
+  for(var i = 0; i<guardadisimo.length; i++){
+    for(var j =0; j<guardadisimo[i][0].length;j+=5){
+      stroke(guardadisimo[i][1],guardadisimo[i][2],guardadisimo[i][3]);
+      curveVertex(guardadisimo[i][0][0],guardadisimo[i][0][1],guardadisimo[i][0][2]);
+    }
+  }
+  endShape(); */
+  for(var i = 0; i<guardadisimo.length; i++){
+    for(var j =0; j<guardadisimo[i][0].length;j+=5){
+      console.log(guardadisimo[i][1]+"  "+guardadisimo[i][2]+"  "+guardadisimo[i][3]);
+      console.log(guardadisimo[i][0][0]+"  "+guardadisimo[i][0][1]+"  "+guardadisimo[i][0][2]);
   t+=aumento;
   nvieja = n;
+  console.log(discriminante);
   }

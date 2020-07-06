@@ -25,10 +25,6 @@ h1 {
 #butterfly{
 	display: flex;
 }
-#speed{
-	position:absolute;
-    transform: rotate(90deg);
-}
 #slider,#pp{
 	display: block;
 	margin-left: auto;
