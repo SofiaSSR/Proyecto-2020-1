@@ -65,7 +65,8 @@ function draw() {
   if(distancia>discriminante &&(-midi>=px1 || px1>=midi)){
     var chiquito = [px1,py1,t+aumento];
     ala.push(chiquito); 
-  }else{
+  }
+  else{
     if(distancia<discriminante) console.log("fue la discriminante");
     if(-midi<=px1 && px1<=midi) console.log("fue el centro ");
    beginShape();
@@ -77,7 +78,8 @@ function draw() {
     colorin[3]=random(colorin[0]);
     colorin[4]= random(colorin[1]);
     colorin[5]= random(colorin[2]);
-
+  }
+    
       point(px1,py1,t)
   t+=aumento;
   nvieja = n;
