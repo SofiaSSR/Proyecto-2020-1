@@ -46,6 +46,7 @@ function draw() {
   var aumento = (speed.value())/1000; 
   var discriminante = 0.00559; //variacion entre los valores de t
   if (n != nvieja ){
+   background(255,226,188);
    ala = [];
    conjunto = [];
    discriminante = 0.00559/* ((aumento*1000)**(Math.log(n)))/2000*n */;
