@@ -1,14 +1,17 @@
-  var guardadisimo =[];//arreglo de las alas
+  var conjunto =[];//arreglo de todas las alas 
   var t = 0;//el punto inicial
   var colorin =[];//colores
-  var aumento =0.05;//variacion entre los valores de t
-  var grande =[] ;//guarda los puntos para hacer la curva entera
+  var aumento;//variacion entre los valores de t
+  var midi = 0.2;
+  var ala =[] ;//guarda los puntos para hacer la curva entera
   var nvieja = 4;
+  var lento = 6.5;//verifica el cambio de la velocidad 
   var pp = true;
+  var rotacion = true;
   function setup() {
     colorin =[0,0,0,random(255),random(255),random(255)];
     slidern = createSlider(1,25,4);
-    speed = createSlider(6.5,65,6.5);
+    speed = createSlider(5,65,6.5);
     canvas = createCanvas(500,500,WEBGL);
     canvas.parent("butterfly");
     slidern.parent("slider");
@@ -19,31 +22,43 @@ function mecanismo(){
   document.getElementById("pp").innerHTML = "play";
   noLoop();
   pp = false;
-  console.log("esta pausado");
  }else{
   document.getElementById("pp").innerHTML = "pausa";
   loop();
-  console.log("esta corriendo");
   pp= true;
+  background(150);
 }}
+function rotacion3D(){
+  if(rotacion){
+    document.getElementById("pp").innerHTML = "seguir graficando";
+    rotacion = false;
+   }else{
+    document.getElementById("pp").innerHTML = "iniciar a rotar";
+    rotacion = true;
+}
 function colores(r,g,b){
   colorin =[r,g,b,random(r),random(g),random(b)];}
 
 function draw() {
+ // background(190);
   //camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
   rotateX(PI/4);
-  rotateX(frameCount*0.001);
-  rotateY(frameCount*0.001);
+/*   rotateX(frameCount*0.001);
+  rotateY(frameCount*0.001); */
   stroke(colorin[3],colorin[4],colorin[4]);
   noFill();
   n = slidern.value();// numero de ejes
   var aumento = (speed.value())/1000; 
-  var discriminante = 0.0039*4/n; //variacion entre los valores de t
-  if (n != nvieja){
+  var discriminante = 0.009; //variacion entre los valores de t
+  if (n != nvieja ){
    background(190);
-   grande = [];
-   discriminante = ((aumento*1000)**(Math.log(n)))/2000*n;
+   ala = [];
+   conjunto = [];
+   discriminante = 0.039/* ((aumento*1000)**(Math.log(n)))/2000*n */;
    t=0;}
+   if(speed.value() != lento){
+     discriminante = 0.050;
+   }
   strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
   var py1 = -cos(t+aumento)*equation*100 ;
@@ -53,29 +68,29 @@ function draw() {
   var py2 = -cos(t)*equation*100 ;
   var px2 = -sin(t)*equation*100 ;
   var distancia = sqrt(((py1-py2)**2)+((px1-px2)**2));
-  if(distancia>discriminante &&(( 499<=int(px1)<= 501)||(499<=int(py1)<= 501)) ){
+  if(distancia>discriminante &&(-midi>=px1 || px1>=midi) ){
     var chiquito = [px1,py1,t+aumento];
-    grande.push(chiquito); 
+    ala.push(chiquito); 
   }else{
-    guardadisimo.push([grande,colorin[3],colorin[4],colorin[5]]);
-    grande = [];
+    if(distancia<discriminante) console.log("fue la discriminante");
+    if(-midi<=px1 && px1<=midi) console.log("fue el centro ");
+   beginShape();
+    for(var i = 0; i<ala.length; i++)
+        curveVertex(ala[i][0],ala[i][1],ala[i][2]);
+    endShape(); 
+    conjunto.push([ala,colorin[3],colorin[4],colorin[5]]);
+    ala = [];
     colorin[3]=random(colorin[0]);
     colorin[4]= random(colorin[1]);
     colorin[5]= random(colorin[2]);
    }
-  /* beginShape();
-  for(var i = 0; i<guardadisimo.length; i++){
-    for(var j =0; j<guardadisimo[i][0].length;j+=5){
-      stroke(guardadisimo[i][1],guardadisimo[i][2],guardadisimo[i][3]);
-      curveVertex(guardadisimo[i][0][0],guardadisimo[i][0][1],guardadisimo[i][0][2]);
-    }
-  }
-  endShape(); */
-  for(var i = 0; i<guardadisimo.length; i++){
-    for(var j =0; j<guardadisimo[i][0].length;j+=5){
-      console.log(guardadisimo[i][1]+"  "+guardadisimo[i][2]+"  "+guardadisimo[i][3]);
-      console.log(guardadisimo[i][0][0]+"  "+guardadisimo[i][0][1]+"  "+guardadisimo[i][0][2]);
+  /*  for(var i = 0; i<conjunto.length; i++){
+    for(var j =0; j<conjunto[i][0].length;j+=5){
+      console.log(conjunto[i][1]+"  "+conjunto[i][2]+"  "+conjunto[i][3]);
+      console.log(conjunto[i][0][0]+"  "+conjunto[i][0][1]+"  "+conjunto[i][0][2]);}}*/
+      point(px1,py1,t)
   t+=aumento;
   nvieja = n;
+  lento=speed.value();
   console.log(discriminante);
   }

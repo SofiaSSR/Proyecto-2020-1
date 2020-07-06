@@ -11,6 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="estilosUwU.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#58b4ae;border-radius:12px;position:fixed;margin-left:auto;margin-right:auto;margin-top:auto;left:0px; right:0px;top:0px;">
   <a class="navbar-brand" href="#" style="color:white;">MENÚ</a>
@@ -61,21 +62,22 @@
         <button class="dropdown-item" type="button" onclick="colores(255,255,20)">Amarillos</button>
     </div></div>
     <center><div id="slider"><p>Número de ejes:</p></div>
-      <div id  ="speed"><p>Velocidad:</p></div></div></center>  
+      <div id  ="speed"><p>Velocidad:</p></div></div>
+       <button onclick="rotacion3D()">girar tridimencional</button></center>  
   <div id="right">
     <h1>La Curva Mariposa</h1>
-    <p>La curva mariposa trascendente es una curva plana trascendente, definida por una ecuación paramétrica y otra equivalente polar descubierta por Temple Fay en 1989, la cual presenta singularidades tales como:</p>
-    <ul> <li>Se extiende en un intervalo de los números reales gracias a un parámetro o variable tiempo (t).</li>
-     <li>Esta gráfica es simétrica respecto a la recta que cruza por los  90° y los 270° en el sistema de coordenadas polares para cualquier número de “ejes” (conocida como el eje Y en el plano cartesiano).</li>
-     <li>El número de “ejes” en esta ecuación viene dado por la variable n perteneciente a los enteros (en la originalmente descubierta n=4), n las ecuaciones anteriores es coeficiente de t dentro de -2 cos().</li>
-     <li id="ecuations"><p>Esta curva viene definida originalmente por la siguiente ecuación polar: </p>
-	   <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/FayButterfly.png"></li></center>
-     <li><p>Pero para la presentación del proyecto vamos a usar las siguiente version de la ecuación de Fay:</p></li>
-     <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/rButterfly.png"></center>
-     <p>Y las siguientes ecuaciones paramétricas:</p>
-     <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/xButterfly.png">
-	   <img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/yButterfly.png"></center>
+    <p><i><b>La curva mariposa trascendente</b></i> es una curva plana trascendente descubierta por Temple Fay en 1989, la cual presenta características tales como:</p>
+    <ul><li><p>Está definida originalmente por la siguiente ecuación polar:</p></li>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/FayButterfly.png"></li></center>
+    <p>Sin embargo, por conveniencia geométrica, usaremos la siguiente trasformación aplicada a la ecuación original:</p>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/rButterfly.png"></li></center>
+    <p>Y sus equivalentes ecuaciones paramétricas:</p>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/xButterfly.png"></li></center>
+    <center><img src="/run/media/juanjose/AC91-2982/Proyecto/Proyecto-2020-1-master/Imagenes/yButterfly.png"></li></center>
+    <li>Cuando <i><b>n</b></i> toma el valor 4, la grafica resultante es La curva mariposa. Sin embargo, podemos modificar el valor de la variable <i><b>n</b></i> para cambiar el número de ejes de la gráfica, la cual varia de un (falta) a una rosa de </li>
+    <li>La curva original es simétrica respecto al eje X. La curva mostrada es simétrica respecto al eje Y.</li>
+    <li>Si la variable n es par, el número de ejes 2n. Si la variable n es impar, el número de ejes es n.</li>
     </ul>
-  </div></div>
+    </div></div>
 </body>
 </html>
