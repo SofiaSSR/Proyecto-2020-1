@@ -61,7 +61,7 @@ function draw() {
   var aumento = (speed.value())/1000; 
   var discriminante = 0.00559; //variacion entre los valores de t
   if (n != nvieja ){
-   background(190);
+   background(255,226,188);
    ala = [];
    conjunto = [];
    discriminante = 0.00559/* ((aumento*1000)**(Math.log(n)))/2000*n */;
@@ -81,7 +81,8 @@ function draw() {
   if(distancia>discriminante &&(-delta>=px1 || px1>=delta)){
     var chiquito = [px1,py1,t+aumento];
     ala.push(chiquito); 
-  }else{
+  }
+  else{
     if(distancia<discriminante) console.log("fue la discriminante");
     if(-delta<=px1 && px1<=delta) console.log("fue el centro ");
    beginShape();
