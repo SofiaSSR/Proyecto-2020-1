@@ -4,14 +4,15 @@
   var aumento;//Aumento de la variable t en cada loop
   var delta = 0.1;//delta alrededor del centro
   var ala =[] ;//guarda los puntos para hacer la curva entera
-  var nvieja = 4;//Número inicial de alas. 
+  var nvieja = 4;//Número inicial de alas.
+  var vuelta = false;
   var lento = 6.5;//Velocidad inicial
   var discriminante = 0.00559; //ver si se termina el ala
   var pp = true;//Play Pause Controla si la mariposa grafica
   var rotacion = false;//Controla si la mariposa rota
   function setup() {
     colorin =[255,255,255,random(255),random(255),random(255)];
-    slidern = createSlider(1,25,4);
+    slidern = createSlider(1,40,4);
     speed = createSlider(5,65,6.5);
     canvas = createCanvas(500,500,WEBGL);
     canvas.parent("butterfly");
@@ -43,7 +44,7 @@ function rotacion3D(){//Controla si se rota la mariposa o no
     background(255,226,188);
 }}
 function colores(r,g,b){ 
-  if(r==g && r != b) {;
+  if(r==g && r != b) {
   colorin =[r,g,b,r-random(5),r-random(15),random(20)];}
   else colorin =[r,g,b,random(r),random(g),random(b)];}
 function draw() {
