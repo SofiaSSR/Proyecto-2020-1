@@ -1,14 +1,21 @@
-  var conjunto =[];//arreglo de todas las alas 
-  var t = 0;//el punto inicial
-  var colorin =[];//colores
-  var aumento;//variacion entre los valores de t
+  var conjunto =[];//Arreglo de todas las alas 
+  var t = 0;//Variable de control
+  var colorin =[];//Arreglo de colores
+  var aumento;//Aumento de la variable t en cada loop
   var delta = 0.1;//delta alrededor del centro
   var ala =[] ;//guarda los puntos para hacer la curva entera
+<<<<<<< HEAD
   var nvieja = 4;
   var discriminante = 0.00559; //variacion entre los valores de t
   var lento = 6.5;//verifica el cambio de la velocidad 
   var pp = true;
   var rotacion = false;//ver si se gira o se grafica
+=======
+  var nvieja = 4;//Número inicial de alas. 
+  var lento = 6.5;//Velocidad inicial
+  var pp = true;//Play Pause Controla si la mariposa grafica
+  var rotacion = false;//Controla si la mariposa rota
+>>>>>>> de59bc0cd4cd2d67e2b5ad8ed48b55afc77f0e46
   function setup() {
     colorin =[255,255,255,random(255),random(255),random(255)];
     slidern = createSlider(1,25,4);
@@ -18,21 +25,26 @@
     slidern.parent("slider");
     speed.parent("speed");
   }
-function mecanismo(){
+
+function mecanismo(){//Controla si se grafica la mariposa o no
  if(pp){
   document.getElementById("pp").innerHTML = "play";
   noLoop();
   pp = false;
- }else{
+ }
+ else{
   document.getElementById("pp").innerHTML = "pausa";
   loop();
   pp= true;
-}}
-function rotacion3D(){
+ }
+}
+
+function rotacion3D(){//Controla si se rota la mariposa o no
   if(rotacion){
     document.getElementById("giro").innerHTML = "iniciar a rotar";
     rotacion = false;
-   }else{
+   }
+  else{
     document.getElementById("giro").innerHTML = "seguir graficando";
     rotacion = true;
     background(255,226,188);
