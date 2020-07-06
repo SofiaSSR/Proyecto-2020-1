@@ -26,7 +26,6 @@ function mecanismo(){
   document.getElementById("pp").innerHTML = "pausa";
   loop();
   pp= true;
-  background(150);
 }}
 function rotacion3D(){
   if(rotacion){
@@ -40,18 +39,13 @@ function colores(r,g,b){
   colorin =[r,g,b,random(r),random(g),random(b)];}
 
 function draw() {
- // background(190);
-  //camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
   rotateX(PI/4);
-/*   rotateX(frameCount*0.001);
-  rotateY(frameCount*0.001); */
   stroke(colorin[3],colorin[4],colorin[4]);
   noFill();
   n = slidern.value();// numero de ejes
   var aumento = (speed.value())/1000; 
   var discriminante = 0.00559; //variacion entre los valores de t
   if (n != nvieja ){
-   background(190);
    ala = [];
    conjunto = [];
    discriminante = 0.00559/* ((aumento*1000)**(Math.log(n)))/2000*n */;
@@ -83,11 +77,7 @@ function draw() {
     colorin[3]=random(colorin[0]);
     colorin[4]= random(colorin[1]);
     colorin[5]= random(colorin[2]);
-   }
-  /*  for(var i = 0; i<conjunto.length; i++){
-    for(var j =0; j<conjunto[i][0].length;j+=5){
-      console.log(conjunto[i][1]+"  "+conjunto[i][2]+"  "+conjunto[i][3]);
-      console.log(conjunto[i][0][0]+"  "+conjunto[i][0][1]+"  "+conjunto[i][0][2]);}}*/
+
       point(px1,py1,t)
   t+=aumento;
   nvieja = n;
