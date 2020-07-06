@@ -4,18 +4,11 @@
   var aumento;//Aumento de la variable t en cada loop
   var delta = 0.1;//delta alrededor del centro
   var ala =[] ;//guarda los puntos para hacer la curva entera
-<<<<<<< HEAD
-  var nvieja = 4;
-  var discriminante = 0.00559; //variacion entre los valores de t
-  var lento = 6.5;//verifica el cambio de la velocidad 
-  var pp = true;
-  var rotacion = false;//ver si se gira o se grafica
-=======
   var nvieja = 4;//Número inicial de alas. 
   var lento = 6.5;//Velocidad inicial
+  var discriminante = 0.00559; //ver si se termina el ala
   var pp = true;//Play Pause Controla si la mariposa grafica
   var rotacion = false;//Controla si la mariposa rota
->>>>>>> de59bc0cd4cd2d67e2b5ad8ed48b55afc77f0e46
   function setup() {
     colorin =[255,255,255,random(255),random(255),random(255)];
     slidern = createSlider(1,25,4);
@@ -59,11 +52,12 @@ function draw() {
    rotateX(frameCount*0.02);
    rotateY(frameCount*0.02);
    for(var i = 0; i<conjunto.length; i++){
-     beginShape();
+    beginShape();
      stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
      for(var j =0; j<conjunto[i][0].length;j+=10)
-      curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
-     endShape();}
+     curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
+     endShape();
+     }
  }else{
   //camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
   rotateX(PI/4);
