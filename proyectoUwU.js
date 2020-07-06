@@ -5,11 +5,12 @@
   var delta = 0.1;//delta alrededor del centro
   var ala =[] ;//guarda los puntos para hacer la curva entera
   var nvieja = 4;
+  var discriminante = 0.00559; //variacion entre los valores de t
   var lento = 6.5;//verifica el cambio de la velocidad 
   var pp = true;
   var rotacion = false;//ver si se gira o se grafica
   function setup() {
-    colorin =[0,0,0,random(255),random(255),random(255)];
+    colorin =[255,255,255,random(255),random(255),random(255)];
     slidern = createSlider(1,25,4);
     speed = createSlider(5,65,6.5);
     canvas = createCanvas(500,500,WEBGL);
@@ -36,39 +37,37 @@ function rotacion3D(){
     rotacion = true;
     background(255,226,188);
 }}
-function colores(r,g,b){
-  colorin =[r,g,b,random(r),random(g),random(b)];}
-
+function colores(r,g,b){ 
+  if(r==g && r != b) {;
+  colorin =[r,g,b,r-random(5),r-random(15),random(20)];}
+  else colorin =[r,g,b,random(r),random(g),random(b)];}
 function draw() {
-  if(rotacion){
-  background(255,226,188);
-  rotateX(-mouseX* 0.01);
+ if(rotacion){
+   background(255,226,188);
    rotateX(frameCount*0.02);
    rotateY(frameCount*0.02);
-  rotateY(-mouseY * 0.01);
-  beginShape();
-  for(var i = 0; i<conjunto.length; i++){
-    for(var j =0; j<conjunto[i][0].length;j+=10){
-      stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
-      curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);}}
-    endShape();
-  }else{
+   for(var i = 0; i<conjunto.length; i++){
+     beginShape();
+     stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
+     for(var j =0; j<conjunto[i][0].length;j+=10)
+      curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
+     endShape();}
+ }else{
   //camera(0,0,(height/2)/ tan(PI/6),0,0,0,0,mouseX,0);
   rotateX(PI/4);
   stroke(colorin[3],colorin[4],colorin[4]);
   noFill();
   n = slidern.value();// numero de ejes
   var aumento = (speed.value())/1000; 
-  var discriminante = 0.00559; //variacion entre los valores de t
   if (n != nvieja ){
    background(255,226,188);
    ala = [];
    conjunto = [];
-   discriminante = 0.00559/* ((aumento*1000)**(Math.log(n)))/2000*n */;
+   discriminante = 0.00559/((n*speed.value()/26))/* ((aumento*1000)**(Math.log(n)))/2000*n */;
    t=0;}
-   if(speed.value() != lento){
-     discriminante = 0.00559*4/n;
-   }
+  if(speed.value() != lento){
+     discriminante = 0.00559/(n*speed.value()/26);
+     console.log("cambio la velocida nueva discriminante es ",discriminante);}
   strokeWeight((n/(n/5))-1.5);//grueso de las lineas y puntos
   var equation = exp(cos(t)) - 2*cos(n*t) - pow(sin(t/12),5);//ecuacion parametrica de la curva maiposa(una parte)
   var py1 = -cos(t+aumento)*equation*100 ;
@@ -77,27 +76,32 @@ function draw() {
   document.getElementById("texto").innerHTML= legend;
   var py2 = -cos(t)*equation*100 ;
   var px2 = -sin(t)*equation*100 ;
+  console.log(discriminante);
   var distancia = sqrt(((py1-py2)**2)+((px1-px2)**2));
-  if(distancia>discriminante &&(-delta>=px1 || px1>=delta)){
-    var chiquito = [px1,py1,t+aumento];
-    ala.push(chiquito); 
+  if(distancia>discriminante &&(-delta>=px1 || px1>=delta)){ 
+    ala.push([px1,py1,t+aumento]); //mete las coordenadas del punto (x,y,z) en una lista y mete esa lista en la lista ala
   }
-  else{
+  else{//que pasa si los puntos estan muy unidos o el punto esta entre un intervalo cercano al centro? se cierra el ala 
     if(distancia<discriminante) console.log("fue la discriminante");
     if(-delta<=px1 && px1<=delta) console.log("fue el centro ");
-   beginShape();
+   beginShape();//inicia la curva
     for(var i = 0; i<ala.length; i++)
-        curveVertex(ala[i][0],ala[i][1],ala[i][2]);
+        curveVertex(ala[i][0],ala[i][1],ala[i][2]);//este for va metiendo cada punto (ala[i]) con sus respectivas coordenadas para que la funcion shape las una en una curva continua
     endShape(); 
-    conjunto.push([ala,colorin[3],colorin[4],colorin[5]]);
-    ala = [];
-    colorin[3]=random(colorin[0]);
-    colorin[4]= random(colorin[1]);
+    conjunto.push([ala,colorin[3],colorin[4],colorin[5]]);//mete el ala en una lista de alas , junto con los colores de dicha ala , esta lista es llamada conjunto (conjunto es tooodo lo que se ha agraficado hasta el momento), 
+    ala = []; // vacia el ala 
+    if(colorin[0]==colorin[1] && colorin[0] != colorin[2]){
+    colorin[3]=colorin[0]-random(5);
+    colorin[4]= colorin[0]-random(15);
     colorin[5]= random(colorin[2]);
+
+    }else{colorin[3]=random(colorin[0]);
+    colorin[4]= random(colorin[1]);
+    colorin[5]= random(colorin[2]);}
    }
   point(px1,py1,t)
   t+=aumento;
   nvieja = n;
   lento=speed.value();
-  if(distancia<0.09) console.log(distancia, " discriminante",discriminante);
+  if(distancia<0.09) console.log(distancia, " discriminante ",discriminante);
   }}
