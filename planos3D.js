@@ -31,7 +31,7 @@ function escritos(textura,c1,c2,c3,cons,roty,rotx){//Ubica los conos y sus texto
   plane(100,100,2,2); 
   fill(c1, c2,c3);
   
-  if (cons==1) 
+  if (cons!=1) 
     rotateZ(cons*PI/2);
   
   rotateY(roty*PI/2);
