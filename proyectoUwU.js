@@ -57,9 +57,9 @@ function draw() {
   //Controla si rota la mariposa o no
   if(rotacion){ //Si sí gira entonces
     background(255,226,188);//Borre lo anterior
-    rotateX(frameCount*0.02);//Rote
-    rotateY(frameCount*0.02);
     //Grafique la mariposa en la nueva rotación
+    rotateX(frameCount*0.007);
+    rotateY(frameCount*0.007);
     for(var i = 0; i<conjunto.length; i++){//Grafica cada ala con sus colores en conjunto
       beginShape();//Cada ala
       stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
