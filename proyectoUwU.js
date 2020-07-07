@@ -37,6 +37,8 @@ function rotacion3D(){//Controla si se rota la mariposa o no
   if(rotacion){
     document.getElementById("giro").innerHTML = "iniciar a rotar";
     rotacion = false;
+    background(255,228,188);
+    reset();
   }
   else{
     document.getElementById("giro").innerHTML = "seguir graficando";
@@ -63,13 +65,23 @@ function draw() {
     for(var i = 0; i<conjunto.length; i++){//Grafica cada ala con sus colores en conjunto
       beginShape();//Cada ala
       stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
-      for(var j =0; j<conjunto[i][0].length;j+=10)//Ubique cada punto y únalo con una curva
+    if(n>4){
+      for(var j =0; j<conjunto[i][0].length;j+=7)//Ubique cada punto y únalo con una curva
         curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
       endShape();
+    }else{
+    for(var j =0; j<conjunto[i][0].length;j+=10)//Ubique cada punto y únalo con una curva
+    curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
+    endShape();
+    }
     }
   }
-  
   else{//Si no gira la mariposa
+    reset();
+  }
+}
+
+function reset(){
     rotateX(PI/4);
     stroke(colorin[3],colorin[4],colorin[5]);
     noFill();
@@ -128,5 +140,4 @@ function draw() {
     point(px1,py1,t);//Grafique punto  
     t+=aumento;//Aumente t
     if(distancia<0.09) console.log(distancia, " discriminante ",discriminante);
-  }
 }
