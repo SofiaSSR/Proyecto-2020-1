@@ -23,9 +23,11 @@ function setup(){
 
 function escritos(textura,c1,c2,c3,cons,roty,rotx){//Ubica los conos y sus textos
   //(textura, R, G, B, constante rotación Z, rotación Y, rotación X)
-  
-  texture(textura);//textura puede ser X Y o Z
+  rotateZ(cons*PI/2);
   fill(0);
+  //Escribe respectivamente X Y o Z en negro 
+  texture(textura);//textura puede ser X Y o Z
+  
   plane(100,100,2,2); 
   fill(c1, c2,c3);
   
@@ -34,7 +36,7 @@ function escritos(textura,c1,c2,c3,cons,roty,rotx){//Ubica los conos y sus texto
   
   rotateY(roty*PI/2);
   rotateX(rotx*PI/2);
-  cone(7,20);//Crea los conos
+  cone(7,20);//Crea cono de radio 7 y altura 20
   rotateX(-rotx*PI/2);
   rotateY(-roty*PI/2);
 }
