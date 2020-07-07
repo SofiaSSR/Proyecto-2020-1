@@ -89,14 +89,14 @@ function draw(){
   
   //escritos( textura,  R,G,B, cons,roty,rotx)
   translate(0,(width*5/10));//Traslada
-  escritos(equis,254,237,95,0,-1,0);
+  escritos(X,254,237,95,0,-1,0);
   translate(0,-(width*5/10));//Revierte el traslado
   
   translate(-(width*5/10),0);
-  escritos(lle,155,239,250,-1,-1,1)
+  escritos(Y,155,239,250,-1,-1,1)
   translate((width*5/10),0);
   
   translate(0,0,(width*5/10));
   rotateY(-3*PI/2);
-  escritos(zeta,254,165,150,1,0,0);
+  escritos(Z,254,165,150,1,0,0);
 }
