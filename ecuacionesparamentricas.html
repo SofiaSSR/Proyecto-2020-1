@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecuaciones Parametricas</title>
-  <script src="ecuaciones parametricas.js" type="text/javascript"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="estilosUwU.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones Parametricas</title>
+    <script src="ecuaciones parametricas.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilosUwU.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#58b4ae;border-radius:12px;position:fixed;margin-left:auto;margin-right:auto;margin-top:auto;left:0px; right:0px;top:0px;">
   <a class="navbar-brand" href="#" style="color:white;">MENÚ</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -42,18 +38,18 @@
   </div>
 </nav>
 <body>
- <div id="container"> <!--contenedor de las dos columnas -->
+<div id="container">
   <div id="left">
     <h1>Ecuaciones Paramétricas</h1>
-	<p>Una ecuación paramétrica es aquella que permite representar curvas o superficies en un plano o espacio, mediante valores arbitrarios o constantes llamados parámetros. Normalmente existen uno o dos parámetros de los cuales dependen los demás valores en la ecuación.</p>
-	<p>Si nos restringimos a un plano bidimensional, las ecuaciones paramétricas no pueden ser descritas por una única ecuación de la forma y = F(x), porque las coordenadas x e y de la posición del punto dependen de un parámetro que puede ser representado por el instante de tiempo t. Por lo tanto, existen funciones F y G evaluadas en el parámetro t, tales que x = F(t) e y = G(t), donde cada valor de t determina un punto (x, y) en el plano. Cuando t varía en un intervalo de números reales, el punto (x, y) se mueve generando una recta o curva en el plano.</p>
+    <p>Una ecuación paramétrica es aquella que permite representar curvas o superficies en un plano o espacio, mediante valores arbitrarios o constantes llamados <i><b>parámetros</b></i>. Normalmente existen uno o dos parámetros de los cuales dependen los demás valores en la ecuación.</p>
+	<p>Si nos restringimos a un plano bidimensional, las ecuaciones paramétricas no pueden ser descritas por una única ecuación de la forma <b><i>y = F(x)</i></b>, porque las coordenadas <i><b>x</b></i> y <i><b>y</b></i>, las cuales determinan la posición del punto, dependen de un parámetro que puede ser representado por el instante de tiempo <i><b>t</b></i>. Por lo tanto, existen funciones <i><b>F</b></i> y <i><b>G</b></i> evaluadas en el parámetro <i><b>t</b></i>, tales que <i><b>x = F(t)</b></i> y <i><b>y = G(t)</b></i>, donde cada valor de <i><b>t</b></i> determina un punto <i><b>(x,y)</b></i> en el plano. Cuando <i><b>t</b></i> varía en un intervalo de números reales, el punto <i><b>(x,y)</b></i> se mueve generando una recta o curva en el plano.</p>
 	</div>
   <div id="right">
-        <p>Aquí mismo puedes ver un ejemplo de ecución paramétrica, la hélice paramétrica. </p><br>
+       <br>
         <p id="texto"></p>
         <button id="ad" onclick="mecanismo()">pausa</button>
         <div id="helice"></div>
-        <p>Disfrute ;)</p>
+	<p>Aquí mismo puedes ver un ejemplo de ecuación paramétrica: <b>La Hélice Paramétrica.</b></p>
   </div>
  </div>
 </body>
