@@ -9,7 +9,7 @@ var lento = 6.5;//Velocidad inicial
 var discriminante = 0.00559; //ver si se termina el ala
 var pp = true;//Play Pause Controla si la mariposa grafica
 var rotacion = false;//Controla si la mariposa rota
-
+var diferente =0;
 function setup() {
   colorin =[255,255,255,random(255),random(255),random(255)];
   slidern = createSlider(1,25,4); //Slider da el número de ejes
@@ -55,7 +55,6 @@ function colores(r,g,b){ //Permite graficar en un rango específico de colores
 }
 
 function draw() {
-  
   //Controla si rota la mariposa o no
   if(rotacion){ //Si sí gira entonces
     background(255,226,188);//Borre lo anterior
@@ -65,15 +64,12 @@ function draw() {
     for(var i = 0; i<conjunto.length; i++){//Grafica cada ala con sus colores en conjunto
       beginShape();//Cada ala
       stroke(conjunto[i][1],conjunto[i][2],conjunto[i][3]);
-    if(n>4){
-      for(var j =0; j<conjunto[i][0].length;j+=7)//Ubique cada punto y únalo con una curva
+      for(var j =0; j<conjunto[i][0].length;j+=(10-diferente))//Ubique cada punto y únalo con una curva
         curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
-      endShape();
-    }else{
-    for(var j =0; j<conjunto[i][0].length;j+=10)//Ubique cada punto y únalo con una curva
+        endShape();
+        for(var j =0; j<conjunto[i][0].length;j+=10)//Ubique cada punto y únalo con una curva
     curveVertex(conjunto[i][0][j][0],conjunto[i][0][j][1],conjunto[i][0][j][2]);
     endShape();
-    }
     }
   }
   else{//Si no gira la mariposa
@@ -82,10 +78,14 @@ function draw() {
 }
 
 function reset(){
-    rotateX(PI/4);
-    stroke(colorin[3],colorin[4],colorin[5]);
-    noFill();
-    n = slidern.value();//revise el número de ejes
+  rotateX(PI/4);
+  stroke(colorin[3],colorin[4],colorin[5]);
+  noFill();
+  n = slidern.value();//revise el número de ejes
+  if(n<5)diferente = 0;
+  else if(n>5 && n< 10) diferente = 2;
+  else if(n<10) diferente = 6;
+  else if(n<20) diferente = 9;
     aumento = (speed.value())/1000; 
     if (n != nvieja ){//Si cambió el número de ejes entonces 
       nvieja = n;
