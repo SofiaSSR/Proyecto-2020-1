@@ -1,5 +1,5 @@
 /* aqui pongan los estilos  */
- body {
+body {
 	margin: 5%;
 	align-content: center;
 	justify-content: center;
@@ -18,12 +18,12 @@ h1 {
 	direction: flex;
 	flex-direction: column;
 	align-content: center;
-	padding: 10% 1% 0% 1%;
+	padding: 3% 1% 0% 1%;
 	text-align: center;
 	text-justify: auto;
 }
 #butterfly{
-	display: flex;
+	display:flex;
 }
 #slider,#pp{
 	display: block;
@@ -34,7 +34,7 @@ p {
 	font-size:18px;
 	text-align:center;
 	color:#3F0255;
-	margin:50px;
+	margin:35px;
 }
 #container{
 	display: flex;
@@ -43,55 +43,6 @@ ul {
 	font-size:18px;
 	text-align:left;
 	color:#3F0255;
-}
- body {
-	align-content: center;
-	justify-content: center;
-	background: #ffe2bc;
-} 
-h1 {
-	color:#ffb367;
-	font-family:sans-serif;
-	text-align:center;
-	padding: 2%;
-	transition-duration: 0.4s;
-}
-#left,#right{
-	align-items: center;
-	margin: 2%;
-	direction: flex;
-	flex-direction: column;
-    align-content: center;
-}
-#right{
-	padding: 5% 1% 0% 1%;
-	text-align: left;
-	text-justify: auto;
-}
-#slider,#pp{
-	display: block;
-	margin-left: auto;
-	margin-right: auto 
-}
-p {
-	font-size:18px;
-	text-align:center;
-	color:#3F0255;
-	margin:50px;
-}
-#container{
-	display: flex;
-	padding-top: 100px ;
-}
-ul {
-	font-size:18px;
-	text-align:left;
-	color:#3F0255;
-	margin: 0%,2%;
-}
-#ecuations{
-	text-align: center;
-	justify-content: center;
 }
 #oc{
 	border: 5px solid  #ffee00;
@@ -100,12 +51,22 @@ ul {
 	text-transform: uppercase;
 	margin:4%;
 	transition-duration: 0.4s;
-	background-color: white; 
+	background-color: white;
 }
-nav.navbar{
-	background-color:#58b4ae;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:auto;
-	left:0; right:0; top:0;
+button{
+	color:#4F3B7A;
+	display:flex;
+	font-size: large;
+	size: 10px;
+	border-radius: 8px;
+	margin:1%;
+	padding: 1.5%; 
+  	border: 2px solid #CA7888;
+  	transition-duration: 0.5s;
+  	cursor: pointer;
+	margin-left:35%;
+}
+button:hover{
+	background: #CA7888;
+	color: #fff;
 }
