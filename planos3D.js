@@ -1,6 +1,6 @@
-var pp = true;//play y pausa
+var pp = true;//Variable controlar play y pausa
 var c;
-var bool= true;//pausar y reanudar la rotacion automatica
+var bool= true;//Pausar y reanudar la rotación automática
 
 function texto(nombre,string){//Para el texto al lado de las flechas 
   nombre.textAlign(CENTER);
@@ -12,31 +12,35 @@ function texto(nombre,string){//Para el texto al lado de las flechas
 function setup(){ 
   canvas2= createCanvas(400,400,WEBGL);
   canvas2.parent("plano3");
-  X=createGraphics(100,100);
-  texto(X,"X");
+  X=createGraphics(100,100);//Crea un plano o espacio de escritura llamado X de 100x100
   Y=createGraphics(100,100);
-  texto(Y,"Y");
   Z=createGraphics(100,100);
+  texto(X,"X");//x se debe escribir según la función texto()
+  texto(Y,"Y");
   texto(Z,"Z");
 }
 
+
 function escritos(textura,c1,c2,c3,cons,roty,rotx){//Ubica los conos y sus textos
-  rotateZ(cons*PI/2);
+  //(textura, R, G, B, constante rotación Z, rotación Y, rotación X)
+  
+  texture(textura);//textura puede ser X Y o Z
   fill(0);
-  texture(textura);
   plane(100,100,2,2); 
   fill(c1, c2,c3);
-  if (cons!=1) 
-    rotateZ(-cons*PI/2);
+  
+  if (cons==1) 
+    rotateZ(cons*PI/2);
+  
   rotateY(roty*PI/2);
   rotateX(rotx*PI/2);
-  cone(7,20);
+  cone(7,20);//Crea los conos
   rotateX(-rotx*PI/2);
   rotateY(-roty*PI/2);
 }
 
 
-function pr(){
+function pr(){//Activa/desactiva rotación automática
   if (bool) {
     bool=false;
     document.getElementById("pr").innerHTML= "reanudar rotacion";
@@ -47,7 +51,8 @@ function pr(){
   }       
 }
 
-function mecanismo(){
+
+function mecanismo(){//Desactiva/Activa automática (si está activada) y rotación manual
   if(pp){
     document.getElementById("ad").innerHTML = "play";
     noLoop();
@@ -61,44 +66,46 @@ function mecanismo(){
 }
 
 function dibujandop(colorcitop,x1,y1,z1,x2,y2,z2){//Para dibujar los planos
-  fill(colorcitop);//es el color del stroke
+  fill(colorcitop);//color del plano
   plane(width/2,height/2,2,2);
-  line(x1,y1,z1,x2,y2,z2);//es el punto de inicio y del final de los ejes
+  line(x1,y1,z1,x2,y2,z2);//Dibuja los ejes
 }
 
 function draw(){
   background(195);
-  rotateX(-mouseX* 0.01);
+  rotateX(-mouseX* 0.01);//Rotación manual
   rotateY(-mouseY * 0.01);
-  if(bool){
+  if(bool){//Si está activada, rotación automática
     rotateX(frameCount*0.001);
     rotateY(frameCount*0.001);
   }
   
   //Colorea los planos X Y Z
   
-  //la textura o image es un color dado en hsba()
+  //La textura o imagen es un color dado en hsba() h=color, s=saturación, b=brillo, a=transparencia
   
-  //Plano X = textura(amarillo pollito), línea x1 y1 z1 x2 y2 z2
+  //Plano YZ = textura(amarillo pollito), línea x1 y1 z1 x2 y2 z2 = eje X
   dibujandop('hsba(58,63%,100%,0.5)', 0,-(width*5/10),0,  0,(width*5/10),0);
   rotateX(PI/2);
-  //Plano Y = textura(menta mágica), línea x1 y1 z1 x2 y2 z2
+  //Plano XZ = textura(menta mágica), línea x1 y1 z1 x2 y2 z2 = eje Y
   dibujandop('hsba(174,47%,100%,0.5)', 0,-(width*5/10),0,  0,(width*5/10),0);
   rotateY(PI/2);
-  //Plano Ztextura(rosita), línea  x1 y1 z1  x2 y2 z2
+  //Plano XY =textura(rosita), línea  x1 y1 z1  x2 y2 z2 = eje Z
   dibujandop('hsba(9,30%,100%,0.5)',  0,0,-(width*5/10),  0,0,(width*5/10));
   
   
   //Escribe X Y Z junto a los ejes
   
-  translate(0,(width*5/10));
-  escritos(X,254,237,95,0,-1,0);
-  translate(0,-(width*5/10));
+  //escritos(  textura,  R,G,B, cons,roty,rotx){
+  translate(0,(width*5/10));//Traslada
+  escritos(  X,  254,237,95,  0,-1,0);
+  translate(0,-(width*5/10));//Revierte el traslado
   
   translate(-(width*5/10),0);
-  escritos(Y,155,239,250,-1,-1,1)
+  escritos(  Y,  155,239,250,  -1,-1,1)
+  translate((width*5/10),0);
   
-  translate((width*5/10),0,(width*5/10));
+  translate(0,0,(width*5/10));
   rotateY(-3*PI/2);
-  escritos(Z,254,165,150,1,0,0);
+  escritos(  Z,  254,165,150,  1,0,0);
 }
