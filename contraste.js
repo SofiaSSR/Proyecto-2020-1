@@ -68,5 +68,5 @@ function draw(){
     let angled = angler * 180 / PI;
     angler /= PI;
     document.getElementById("texto").innerHTML = 'Tu punto polar es :( ' + nfc(medida,3)+'  ,  '+ nfc(angled,3) +'°)\t\t\t';
-    document.getElementById("texto").innerHTML += 'y tu punto coordenado es:( ' + nfc(mouseX-250,3)+'  ,  '+ nfc(mouseY-250,3) +')\t\t\t';
+    document.getElementById("texto").innerHTML += 'y tu punto coordenado es:( ' + nfc(mouseX-250,3)+'  ,  '+ nfc(-(mouseY-250),3) +')\t\t\t';
   }

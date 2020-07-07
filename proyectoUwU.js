@@ -71,7 +71,7 @@ function draw() {
   
   else{//Si no gira la mariposa
     rotateX(PI/4);
-    stroke(colorin[3],colorin[4],colorin[4]);
+    stroke(colorin[3],colorin[4],colorin[5]);
     noFill();
     n = slidern.value();//revise el número de ejes
     aumento = (speed.value())/1000; 
@@ -125,7 +125,6 @@ function draw() {
         colorin[5]= random(colorin[2]);
       }
     }
-
     point(px1,py1,t);//Grafique punto  
     t+=aumento;//Aumente t
     if(distancia<0.09) console.log(distancia, " discriminante ",discriminante);
